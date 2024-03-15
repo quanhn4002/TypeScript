@@ -1,8 +1,8 @@
 import React from 'react'
 import { productType } from '../interfaces/products'
-import Button from 'react-bootstrap/Button'
+
 import Card from 'react-bootstrap/Card'
-// import { productType } from '~/interfaces/products'
+
 const product = (productList: productType) => {
   return (
     <Card style={{ width: '18rem' }}>
