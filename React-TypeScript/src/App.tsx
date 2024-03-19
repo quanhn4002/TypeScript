@@ -1,20 +1,25 @@
-import React from 'react'
 import './App.css'
+import Footer from './components/footer'
+import { Header } from './components/header'
+import { Routes, Route } from 'react-router-dom'
+import NotFound from './pages/NotFound'
+import Register from './pages/Register'
+import Login from './pages/Login'
+import ProductDetail from './pages/ProductDetail'
 import Home from './pages/home'
 
 function App() {
-  console.log(typeof React.createElement('div', { className: 'app' }, React.createElement('h1', {}, 'Hello, World!')))
-
-  // const addProduct = () => {
-  //   console.log('Them thanh cong!')
-  // }
   return (
     <>
-      {/* <div className='app'>
-        <h1>Hello, World!</h1>
-        <button onClick={() => addProduct()}>Click Me</button>
-      </div> */}
-      <Home />
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/shop/:id' element={<ProductDetail />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+      <Footer />
     </>
   )
 }

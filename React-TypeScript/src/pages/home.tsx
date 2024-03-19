@@ -1,12 +1,15 @@
 import React from 'react'
 import Banner from '../components/banner'
 import ProductList from '../components/productList'
-
-const Home = () => {
+import { productType } from '@/interfaces/products'
+type Props = {
+  product: productType
+}
+const Home = (props: Props) => {
   return (
     <div>
       <Banner />
-      <h2>Danh sach san pham</h2>
+
       <ProductList />
     </div>
   )
