@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { productType } from '../interfaces/products'
+import { Link } from 'react-router-dom'
 const productList = () => {
   const [product, setProducts] = useState<productType[]>([])
   useEffect(() => {

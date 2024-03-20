@@ -1,12 +1,12 @@
 import './App.css'
 import Footer from './components/footer'
 import { Header } from './components/header'
+import Home from './pages/home'
 import { Routes, Route } from 'react-router-dom'
 import NotFound from './pages/NotFound'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import ProductDetail from './pages/ProductDetail'
-import Home from './pages/home'
 
 function App() {
   return (
