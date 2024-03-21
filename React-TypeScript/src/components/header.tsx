@@ -1,48 +1,37 @@
 import { NavLink } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Form from 'react-bootstrap/Form'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 
 export const Header = () => {
   return (
-    <nav className='navbar navbar-expand-lg bg-body-tertiary'>
-      <div className='container-fluid'>
-        <NavLink className='navbar-brand' to='/'>
-          Navbar
-        </NavLink>
-        <button
-          className='navbar-toggler'
-          type='button'
-          data-bs-toggle='collapse'
-          data-bs-target='#navbarSupportedContent'
-          aria-controls='navbarSupportedContent'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-        >
-          <span className='navbar-toggler-icon' />
-        </button>
-        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-            <li className='nav-item'>
-              <NavLink className='nav-link active' aria-current='page' to='/'>
-                Home
-              </NavLink>
-            </li>
-            <li className='nav-link'>
-              <NavLink className='nav-link' to='/shop'>
-                Shop
-              </NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className='nav-link' to='/login'>
-                Login
-              </NavLink>
-            </li>
-            <li className='nav-item'>
-              <NavLink className='nav-link' to='/register'>
-                Register
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Navbar expand='lg' className='bg-body-tertiary'>
+      <Container fluid>
+        <Navbar.Toggle aria-controls='navbarScroll' />
+        <Navbar.Collapse id='navbarScroll'>
+          <Nav className='me-auto my-2 my-lg-0' style={{ maxHeight: '100px' }} navbarScroll>
+            <NavLink to='/' className='nav-link'>
+              Home
+            </NavLink>
+            <NavLink to='/shop' className='nav-link'>
+              Shop
+            </NavLink>
+            <NavLink to='/Login' className='nav-link'>
+              Login
+            </NavLink>
+            <NavLink to='/register' className='nav-link'>
+              Register
+            </NavLink>
+          </Nav>
+
+          <Form className='d-flex'>
+            <Form.Control type='search' placeholder='Search' className='me-2' aria-label='Search' />
+            <Button variant='outline-success'>Search</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 }

@@ -15,14 +15,14 @@ function banner() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className='d-block w-100' src='https://picsum.photos/id/23/100/100' alt='Second slide' />
+        <img className='d-block w-100' src='https://i.ytimg.com/vi/vMVwdSp489E/maxresdefault.jpg' alt='Second slide' />
         <Carousel.Caption>
           <h5>Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className='d-block w-100' src='https://picsum.photos/id/235/100/100' alt='Third slide' />
+        <img className='d-block w-100' src='https://i.ytimg.com/vi/vMVwdSp489E/maxresdefault.jpg' alt='Third slide' />
         <Carousel.Caption>
           <h5>Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
