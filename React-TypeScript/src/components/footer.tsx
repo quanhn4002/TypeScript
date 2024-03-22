@@ -8,29 +8,31 @@ const Footer = () => {
         <Row className='mb-4'>
           <Col md={4}>
             <h5>About Us</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Hỗ trợ khách hàng </p>
+            <p>Tra cứu tình trạng đơn hàng </p>
+            <p> Phương thức thanh toán</p>
+            <p>Quy định và hướng dẫn mua hàng</p>
+            <p> Chính sách đổi trả sản phẩm</p>
+            <p> Chính sách bảo hành Chính sách bảo mật thông tin</p>
           </Col>
           <Col md={4}>
             <h5>Useful Links</h5>
             <ul className='list-unstyled'>
               <li>
-                <a href='#'>Link 1</a>
+                <a href='#'>facebook.com</a>
               </li>
               <li>
-                <a href='#'>Link 2</a>
+                <a href='#'>Tiktok.com</a>
               </li>
               <li>
-                <a href='#'>Link 3</a>
-              </li>
-              <li>
-                <a href='#'>Link 4</a>
+                <a href='#'>0988424242</a>
               </li>
             </ul>
           </Col>
           <Col md={4}>
             <h5>Contact Us</h5>
             <p>123 Main Street, City, Country</p>
-            <p>Email: example@example.com</p>
+            <p>Email: quanhainguyenlm@gmail.com</p>
           </Col>
         </Row>
         <hr className='bg-light' />

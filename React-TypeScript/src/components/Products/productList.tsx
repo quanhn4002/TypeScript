@@ -20,8 +20,8 @@ const ProductList = () => {
         <Card className='productCard' key={product.id}>
           <Card.Img variant='top' style={{ height: '200px' }} src={product.thumbnail} />
           <Card.Body>
-            <Card.Title>{product.title}</Card.Title>
-            <Card.Text>{product.description}</Card.Text>
+            <Card.Title>{product?.title}</Card.Title>
+            <Card.Text>{product?.description}</Card.Text>
             <Link to={`/shop/${product.id}`}>
               <Button variant='primary'>View</Button>
             </Link>
