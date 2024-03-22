@@ -3,7 +3,7 @@ import { productType } from '../../interfaces/products'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-import './cart.css'
+import './product.css'
 
 const ProductList = () => {
   const [products, setProducts] = useState<productType[]>([])
@@ -12,7 +12,7 @@ const ProductList = () => {
     fetch('http://localhost:3000/products')
       .then((res) => res.json())
       .then((data) => setProducts(data))
-  }, []) // Đặt tham số thứ hai là [] để chỉ chạy một lần khi component được tạo
+  }, [])
 
   return (
     <div className='productList'>
