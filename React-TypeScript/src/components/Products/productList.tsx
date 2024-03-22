@@ -18,11 +18,11 @@ const ProductList = () => {
     <div className='productList'>
       {products.map((product) => (
         <Card className='productCard' key={product.id}>
-          <Card.Img variant='top' style={{ height: '200px' }} src={product.thumbnail} />
+          <Card.Img variant='top' style={{ height: '50px', width: '50px' }} src={product.thumbnail} />
           <Card.Body>
             <Card.Title>{product?.title}</Card.Title>
             <Card.Text>{product?.description}</Card.Text>
-            <Link to={`/shop/${product.id}`}>
+            <Link to={`/product/${product.id}`}>
               <Button variant='primary'>View</Button>
             </Link>
           </Card.Body>
