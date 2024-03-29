@@ -39,3 +39,29 @@ button:hover {
 a {
   text-decoration: none;
 }
+table {
+  text-align: center;
+}
+.form {
+  width: 600px;
+  max-width: 100%;
+  margin: 190px 0 0 90px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.container {
+  height: 100vh;
+  margin-top: 100px;
+}
