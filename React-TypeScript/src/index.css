@@ -1,67 +1,95 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
 }
-
-html {
-  font-size: 16px;
-  font-weight: 400;
-  font-family: 'Inter', sans-serif;
+a:hover {
+  color: #535bf2;
 }
 
 body {
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
-ol,
-ul,
-li {
-  list-style: none;
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
 button {
-  cursor: pointer;
+  border-radius: 8px;
   border: 1px solid transparent;
-  border-radius: 6px;
-  outline: none;
-  background-color: blue;
-  transition: all 0.3s ease-in-out;
-  padding: 12px 24px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
-
 button:hover {
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
-a {
-  text-decoration: none;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }
 table {
   text-align: center;
 }
+
 .form {
   width: 600px;
   max-width: 100%;
-  margin: 190px 0 0 90px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  margin-top: 50px;
-  margin-bottom: 50px;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+  padding: 32px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
-.container {
-  height: 100vh;
+
+Nav {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+Nav .nav-link {
+  margin-right: 24px;
+}
+Nav .nav-link a {
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: all 0.5s ease-in-out;
+}
+Nav .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+Nav .nav-link.active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.tc-m {
   margin-top: 100px;
 }

@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import instance from '~/api'
+import { TProduct } from '~/interface/product'
 import Card from 'react-bootstrap/Card'
-import { productType } from '../interfaces/products'
 
-type Props = { products: productType[] }
+type Props = {}
 
 const ProductDetail = (props: Props) => {
   const { id } = useParams()
-  const [products, setProduct] = useState<productType | null>(null)
-
+  const [products, setProduct] = useState<TProduct | null>(null)
   useEffect(() => {
-    fetch(`http://localhost:3000/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data))
+    const getProduct = async () => {
+      const { data } = await instance.get(`/products/${id}`)
+      setProduct(data)
+    }
+    getProduct()
   }, [])
-
   return (
     <div className='container'>
       <div className='productDetail'>
@@ -34,5 +35,4 @@ const ProductDetail = (props: Props) => {
     </div>
   )
 }
-
 export default ProductDetail

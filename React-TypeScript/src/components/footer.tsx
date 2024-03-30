@@ -3,7 +3,7 @@ type Props = {}
 const Footer = (props: Props) => {
   return (
     <footer>
-      <div>Copyright by Kiu - 2024</div>
+      <div>Copyright by hoangnm62 - 2024</div>
     </footer>
   )
 }

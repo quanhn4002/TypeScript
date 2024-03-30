@@ -1,10 +1,12 @@
-import Banner from '@/components/banner'
-
+import React from 'react'
+import { Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
-import { productType } from '@/interfaces/products'
-type Props = { products: productType[] }
+import Banner from '~/components/banner'
+import { TProduct } from '~/interface/product'
+
+type Props = {
+  products: TProduct[]
+}
 const Home = ({ products }: Props) => {
   return (
     <div>
@@ -17,7 +19,7 @@ const Home = ({ products }: Props) => {
             <Card.Body>
               <Card.Title>{product?.title}</Card.Title>
               <Card.Text>{product?.description}</Card.Text>
-              <Link to={`/product/${product.id}`}>
+              <Link to={`/shop/${product.id}`}>
                 <Button variant='primary'>View</Button>
               </Link>
             </Card.Body>

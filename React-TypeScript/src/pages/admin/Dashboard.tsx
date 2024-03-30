@@ -1,11 +1,18 @@
-import { productType } from '@/interfaces/products'
+import React from 'react'
 import { Link } from 'react-router-dom'
+import { TProduct } from '~/interface/product'
 
 type Props = {
-  products: productType[]
+  products: TProduct[]
+  onDel: (id: string | undefined) => void
+  // nếu trong data id là string thì truyền vào string, còn nếu là number thì truyền vào number
 }
 
-const Dashboard = ({ products }: Props) => {
+const DashBoard = ({ products, onDel }: Props) => {
+  const handleDelete = (id: string | undefined) => {
+    // nếu trong data id là string thì truyền vào string, còn nếu là number thì truyền vào number
+    onDel(id)
+  }
   return (
     <div className='container'>
       <h1>Hello, Admin</h1>
@@ -34,10 +41,13 @@ const Dashboard = ({ products }: Props) => {
               </td>
               <td>{item.description}</td>
               <td>
-                <Link to={`/admin/edit/${item.id}`} className='btn btn-danger'>
+                <Link className='btn btn-warning' to={`/admin/edit/${item.id}`}>
                   Update
                 </Link>
-                <button className='btn btn-warning'>Delete</button>
+                <button className='btn btn-danger' onClick={() => handleDelete(String(item.id))}>
+                  {/* ở trên string dưới string k ngược lại */}
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
@@ -47,4 +57,4 @@ const Dashboard = ({ products }: Props) => {
   )
 }
 
-export default Dashboard
+export default DashBoard
