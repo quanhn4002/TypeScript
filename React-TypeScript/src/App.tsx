@@ -11,10 +11,12 @@ import DashBoard from './pages/admin/DashBoard'
 import { useEffect, useState } from 'react'
 import { TProduct } from './interface/product'
 import ProductAdd from './pages/admin/ProductAdd'
-import { createProduct, editProduct, getProducts, removeProduct } from './api/product'
+import { createProduct, getProducts, removeProduct } from './api/product'
 import ProductEdit from './pages/admin/ProductEdit'
+import instance from './api'
 
 function App() {
+  // render dữ liệu ra màn hình
   const [products, setProducts] = useState<TProduct[]>([])
   const navigate = useNavigate()
   useEffect(() => {
@@ -23,7 +25,7 @@ function App() {
       setProducts(data)
     })()
   }, [])
-
+  // thêm sản phẩm
   const handleAdd = (product: TProduct) => {
     ;(async () => {
       const data = await createProduct(product)
@@ -31,15 +33,15 @@ function App() {
       navigate('/admin')
     })()
   }
-
+  // sửa sản phẩm
   const handleEditProduct = (product: TProduct) => {
     ;(async () => {
-      const p = await editProduct(product)
-      setProducts(products.map((item) => (item.id === p.id ? p : item))) //giải thích : nếu id của product trùng với id của p thì trả về p còn không thì trả về i
-
+      const { data } = await instance.put(`/products/${product.id}`, product)
+      setProducts(products.map((item) => (item.id === data.id ? data : item)))
       navigate('/admin')
     })()
   }
+  // xóa sản phẩm
   const handleDeleteProduct = (id: string | undefined) => {
     ;(async () => {
       const isConfirm = window.confirm('Are you sure?')

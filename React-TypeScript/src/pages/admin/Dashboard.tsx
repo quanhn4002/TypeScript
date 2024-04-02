@@ -37,7 +37,7 @@ const DashBoard = ({ products, onDel }: Props) => {
               <td>{item.title}</td>
               <td>{item.price}</td>
               <td>
-                <img width={140} src={item.thumbnail} alt={item.title} />
+                <img width={140} height={100} src={item.thumbnail} alt={item.title} />
               </td>
               <td>{item.description}</td>
               <td>

@@ -54,18 +54,6 @@ header {
   }
 }
 
-footer {
-  margin-top: 30px;
-  height: 50px;
-  width: 100%;
-
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #0e0b0b;
-  color: #fff;
-}
 .image {
   width: 100px;
   height: 150px;

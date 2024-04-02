@@ -1,10 +1,10 @@
 import { TProduct } from '~/interface/product'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import Joi from 'joi'
 import { joiResolver } from '@hookform/resolvers/joi'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { getProduct } from '~/api/product'
+import instance from '~/api'
 
 type Props = {
   onEdit: (product: TProduct) => void
@@ -13,13 +13,14 @@ type Props = {
 const schemaProduct = Joi.object({
   title: Joi.string().required().min(3).max(255),
   price: Joi.number().required().min(0),
+  thumbnail: Joi.string().allow(''),
   description: Joi.string().allow('')
 })
 
 const ProductEdit = ({ onEdit }: Props) => {
   const { id } = useParams()
   console.log(id)
-  const [product, setProducts] = useState<TProduct | null>(null)
+  const [product, setProduct] = useState<TProduct | null>(null)
   const {
     register,
     handleSubmit,
@@ -27,16 +28,17 @@ const ProductEdit = ({ onEdit }: Props) => {
   } = useForm<TProduct>({
     resolver: joiResolver(schemaProduct)
   })
-  const onEditSubmit: SubmitHandler<TProduct> = (data) => {
-    console.log(data)
-    onEdit(data)
+  const onEditSubmit = (product: TProduct) => {
+    onEdit({ ...product, id }) //dải dữ liệu và truyền id
   }
   useEffect(() => {
-    fetch('http://localhost:3000/products/' + id)
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data)
-      })
+    // fetch(`http://localhost:3000/products/${id}`)
+    //   .then((res) => res.json())
+    //   .then((data) => setProduct(data))
+    ;(async () => {
+      const { data } = await instance.get(`/products/${id}`)
+      setProduct(data)
+    })()
   }, [])
   return (
     <div className='container'>
@@ -64,6 +66,18 @@ const ProductEdit = ({ onEdit }: Props) => {
             {...register('price', { required: true, min: 0 })}
           />
           {errors.price && <span className='text-danger'>{errors.price.message}</span>}
+        </div>
+        <div className='form-group'>
+          <label htmlFor='thumbnail'>Image</label>
+          <input
+            type='text'
+            className='form-control'
+            id='thumbnail'
+            placeholder='thumbnail'
+            defaultValue={product?.thumbnail}
+            {...register('thumbnail')}
+          />
+          {errors.thumbnail && <span className='text-danger'>{errors.thumbnail.message}</span>}
         </div>
         <div className='form-group'>
           <label htmlFor='description'>Description</label>
