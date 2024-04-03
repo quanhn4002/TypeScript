@@ -7,7 +7,7 @@ function Banner() {
         <Carousel.Item>
           <img
             className='d-block w-100'
-            src='https://laptoptoday.vn/sites/default/files/styles/anh_slide_pc/public/2021-05/laptop-lenovo.jpg?itok=J_D7jun6'
+            src='https://thietkehaithanh.com/wp-content/uploads/2019/06/thietkehaithanh-banner-1-1.jpg'
             alt='First slide'
           />
           <Carousel.Caption>
@@ -29,7 +29,7 @@ function Banner() {
         <Carousel.Item>
           <img
             className='d-block w-100'
-            src='https://laptopbaominh.com/wp-content/uploads/2015/08/banner-n04.jpg'
+            src='https://stcv4.hnammobile.com/uploads/news/large/iphone-14-series-luon-co-san-hang-giao-ngay-khong-can-doi-social.jpg?v=1668565357'
             alt='Third slide'
           />
           <Carousel.Caption>

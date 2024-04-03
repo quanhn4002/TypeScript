@@ -11,7 +11,7 @@ import DashBoard from './pages/admin/DashBoard'
 import { useEffect, useState } from 'react'
 import { TProduct } from './interface/product'
 import ProductAdd from './pages/admin/ProductAdd'
-import { createProduct, getProducts, removeProduct } from './api/product'
+import { createProduct, getProducts } from './api/product'
 import ProductEdit from './pages/admin/ProductEdit'
 import instance from './api'
 
@@ -46,7 +46,7 @@ function App() {
     ;(async () => {
       const isConfirm = window.confirm('Are you sure?')
       if (isConfirm) {
-        await removeProduct(`${id}`)
+        await instance.delete(`/products/${id}`)
         setProducts(products.filter((i) => i.id !== id))
       }
     })()

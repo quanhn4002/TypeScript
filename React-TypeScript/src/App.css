@@ -75,3 +75,6 @@ header {
   cursor: pointer;
   transition: 0.5s;
 }
+.btn {
+  margin-bottom: 20px;
+}
